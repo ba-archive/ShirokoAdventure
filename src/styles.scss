@@ -1,0 +1,30 @@
+#unity-build-title {
+  display: none;
+}
+
+#unity-webgl-logo {
+  display: none;
+}
+
+#unity-logo {
+  background: url("/favicon.gif") no-repeat center !important;
+  background-size: contain !important;
+}
+
+#unity-progress-bar-empty {
+  background: none !important;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: stretch;
+  border-radius: 1919px;
+  border: 1px solid #fff;
+  height: 0.75rem !important;
+}
+
+#unity-progress-bar-full {
+  border-radius: 1919px;
+  background-color: #fff;
+  height: 100% !important;
+  margin: 0 !important;
+}

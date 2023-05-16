@@ -1,0 +1,56 @@
+{
+  "name": "vue-2048",
+  "version": "3.0.0",
+  "description": "A Vue.js project",
+  "private": true,
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vue-tsc --noEmit --skipLibCheck && vite build",
+    "preview": "vite preview",
+    "format": "prettier --config .prettierrc.json -uw ./src/",
+    "prepare": "husky install",
+    "stage": "lint-staged "
+  },
+  "dependencies": {
+    "gsap": "3.11.5",
+    "ismobilejs": "1.1.1",
+    "lodash-es": "4.17.21",
+    "mitt": "3.0.0",
+    "vue": "3.2.47",
+    "vue-qr": "4.0.9"
+  },
+  "devDependencies": {
+    "@types/hammerjs": "2.0.41",
+    "@types/lodash-es": "4.17.7",
+    "@types/node": "18.15.10",
+    "@vitejs/plugin-legacy": "4.0.1",
+    "@vitejs/plugin-vue": "4.1.0",
+    "@vue/compiler-sfc": "3.2.47",
+    "autoprefixer": "9.8.5",
+    "husky": "8.0.3",
+    "lint-staged": "13.2.0",
+    "postcss": "8.4.21",
+    "postcss-plugin-px2rem": "0.8.1",
+    "postcss-preset-env": "8.0.1",
+    "prettier": "2.8.7",
+    "sass": "1.62.0",
+    "staged": "0.0.0",
+    "terser": "5.16.6",
+    "typescript": "5.0.4",
+    "vite": "4.0.0",
+    "vite-plugin-clear-console": "0.2.2",
+    "vite-plugin-pwa": "0.14.4",
+    "vue-tsc": "1.2.0"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,js,vue}": [
+      "prettier --config .prettierrc.json --write",
+      "git add"
+    ]
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
