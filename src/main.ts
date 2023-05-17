@@ -8,7 +8,7 @@ const container = document.querySelector("#unity-container") as HTMLDivElement;
 const canvas = document.querySelector("#unity-canvas") as HTMLCanvasElement;
 const loadingBar = document.querySelector("#unity-loading-bar") as HTMLDivElement;
 const progressBarFull = document.querySelector("#unity-progress-bar-full") as HTMLDivElement;
-const fullscreenButton = document.querySelector("#unity-fullscreen-button") as HTMLButtonElement;
+const fullscreenButton = document.querySelector("#unity-fullscreen-button") as HTMLDivElement;
 
 const buildUrl = "/Build";
 const loaderUrl = buildUrl + "/ShirokoAdventrue.loader.js";
@@ -38,6 +38,7 @@ if (isMobile(navigator).any) {
   document.getElementsByTagName('head')[0].appendChild(meta);
   container.className = "unity-mobile";
   canvas.className = "unity-mobile";
+  fullscreenButton.className = "unity-mobile";
 
   // To lower canvas resolution on mobile devices to gain some
   // performance, uncomment the following line:
