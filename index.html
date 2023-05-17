@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>白子的基沃托斯骑行大冒险！</title>
-    <link rel="icon" href="favicon.gif" type="image/gif">
+    <link rel="icon" href="favicon.gif" type="image/gif" />
+    <link
+      rel="preload"
+      href="Build/ShirokoAdventrue.framework.js.unityweb"
+      as="fetch"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="Build/ShirokoAdventrue.wasm.unityweb"
+      as="fetch"
+      crossorigin
+    />
+    <link rel="preload" href="Build/ShirokoAdventrue.loader.js" as="script" />
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=1280 height=720></canvas>
+      <canvas id="unity-canvas" width="1280" height="720"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -21,9 +34,7 @@
         <div id="unity-build-title">ShirokoAdventureInKivotos</div>
       </div>
     </div>
-    <div id="app">
-
-    </div>
+    <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
