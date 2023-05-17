@@ -1,0 +1,9 @@
+{
+  "plugins": [
+    "prettier-plugin-css-order"
+  ],
+  "singleQuote": true,
+  "arrowParens": "avoid",
+  "trailingComma": "es5",
+  "useTabs": false
+}
