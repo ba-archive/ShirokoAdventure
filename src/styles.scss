@@ -48,8 +48,7 @@
 
 #unity-fullscreen-button {
   float: right;
-  background: url('/TemplateData/fullscreen-button.png') no-repeat
-    center;
+  background: url('/TemplateData/fullscreen-button.png') no-repeat center;
   width: 38px;
   height: 38px;
 
@@ -58,15 +57,6 @@
   }
 }
 /* unity generated styles end */
-
-#unity-build-title {
-  display: none;
-}
-
-#unity-webgl-logo {
-  display: none;
-}
-
 #unity-logo {
   background: url('/favicon.gif') no-repeat center;
   background-size: contain;
@@ -94,4 +84,36 @@
   background-color: #fff;
   width: 0;
   height: 100%;
+}
+
+html,
+body {
+  width: 100vw;
+  width: 100dvw;
+  height: 100vh;
+  height: 100dvh;
+}
+
+body {
+  background: #b2cffa;
+
+  &::after {
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.2;
+    z-index: -1;
+    background: url('favicon.gif');
+    width: 100vw;
+    width: 100dvw;
+    height: 100vh;
+    height: 100dvh;
+    content: '';
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #080808;
+  }
 }

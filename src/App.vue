@@ -1,10 +1,8 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
-import LandscapeTip from "@/LandscapeTip.vue";
+import { ref } from 'vue';
+import LandscapeTip from '@/LandscapeTip.vue';
 
 const { orientation } = window.screen;
-
-console.log(orientation.type);
 
 const isLandscape = ref(orientation?.type.includes('landscape') ?? true);
 
@@ -19,4 +17,4 @@ orientation.onchange = () => {
   </Teleport>
 </template>
 
-<style scoped></style>
+<style scoped lang="scss"></style>
