@@ -1,6 +1,8 @@
 @font-face {
-  src: url('./assets/DinkieBitmatSubset.ttf');
-  font-family: 'DinkieBitmapSubset';
+  src: url('./assets/FusionPixelSubset.ttf') format('truetype'),
+    url('./assets/FusionPixelSubset.woff') format('woff'),
+    url('./assets/FusionPixelSubset.woff2') format('woff2');
+  font-family: 'Fushion Pixel';
   font-display: swap;
 }
 
@@ -150,11 +152,11 @@ body {
   cursor: pointer;
   border: 4px solid white;
   background-color: black;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   color: #fff;
   font-size: 1.25rem;
 
-  font-family: 'DinkieBitmapSubset', 'Microsoft YaHei', 'PingFang SC',
+  font-family: 'Fushion Pixel', 'Microsoft YaHei', 'PingFang SC',
     -apple-system, system-ui, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Noto Sans',
     BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans GB', Arial, sans-serif;
   user-select: none;
