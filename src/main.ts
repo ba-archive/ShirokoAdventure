@@ -56,10 +56,15 @@ const script = document.createElement("script");
 script.src = loaderUrl;
 script.onload = () => {
   createUnityInstance(canvas, config, (progress: number) => {
-    loadingPercentage.innerText = (progress * 100).toFixed(2) + "%";
     progressBarFull.style.width = 100 * progress + "%";
+    if (progress - 0.89 <= 0) {
+      loadingPercentage.innerText = (progress * 100).toFixed(2) + "%";
+    } else {
+      loadingPercentage.innerText = "正在解析游戏资源……";
+    }
   }).then((unityInstance) => {
     loadingBar.style.display = "none";
+    loadingPercentage.style.display = "none";
     window.unityInstance = unityInstance;
     fullscreenButton.onclick = () => {
       unityInstance.SetFullscreen(1);
