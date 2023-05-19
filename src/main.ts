@@ -46,8 +46,8 @@ if (isMobile(navigator).any) {
   // config.devicePixelRatio = 1;
 } else {
   // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-  canvas.style.width = "1280px";
-  canvas.style.height = "720px";
+  // canvas.style.width = "1280px";
+  // canvas.style.height = "720px";
 }
 
 loadingBar.style.display = "block";

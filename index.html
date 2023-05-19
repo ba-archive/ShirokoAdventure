@@ -20,28 +20,32 @@
     <link rel="preload" href="Build/ShirokoAdventrue.loader.js" as="script" />
   </head>
   <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width="1280" height="720"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
+    <div id="game-container">
+      <div id="unity-container" class="unity-desktop">
+        <canvas id="unity-canvas" width="1280" height="720"></canvas>
+        <div id="unity-loading-bar">
+          <div id="unity-logo"></div>
+          <div id="unity-progress-bar-empty">
+            <div id="unity-progress-bar-full"></div>
+          </div>
+          <div id="loading-percentage"></div>
         </div>
-        <div id="loading-percentage"></div>
-      </div>
-      <div id="unity-footer">
-        <div class="button primary" id="unity-fullscreen-button">进入全屏</div>
-        <div
-          class="button"
-          onclick="window.open('https://blue-archive.io', '_blank')"
-        >
-          前往主页
-        </div>
-        <div
-          class="button"
-          onclick="window.open('https://space.bilibili.com/1413213021', '_blank')"
-        >
-          前往bilibili
+        <div id="unity-footer">
+          <div class="button primary" id="unity-fullscreen-button">
+            进入全屏
+          </div>
+          <div
+            class="button"
+            onclick="window.open('https://blue-archive.io', '_blank')"
+          >
+            前往主页
+          </div>
+          <div
+            class="button"
+            onclick="window.open('https://space.bilibili.com/1413213021', '_blank')"
+          >
+            前往bilibili
+          </div>
         </div>
       </div>
     </div>
