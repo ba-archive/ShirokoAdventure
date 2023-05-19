@@ -65,7 +65,7 @@
 }
 /* unity generated styles end */
 #unity-logo {
-  background: url('favicon.gif') no-repeat center;
+  background: url('../public/favicon.gif') no-repeat center;
   background-size: contain;
   width: 154px;
   height: 130px;
@@ -110,7 +110,7 @@ body {
     left: 0;
     opacity: 0.2;
     z-index: -1;
-    background: url('favicon.gif');
+    background: url('../public/favicon.gif');
     width: 100vw;
     width: 100dvw;
     height: 100vh;
