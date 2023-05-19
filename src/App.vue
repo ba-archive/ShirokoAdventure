@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from "vue";
 import LandscapeTip from '@/LandscapeTip.vue';
+import isMobile from "ismobilejs";
 
 const { orientation } = window.screen;
 
@@ -9,6 +10,18 @@ const isLandscape = ref(orientation?.type.includes('landscape') ?? true);
 orientation.onchange = () => {
   isLandscape.value = orientation.type.includes('landscape');
 };
+
+const isMobileDevice = isMobile(window.navigator).any;
+
+if (isMobileDevice) {
+  watch(() => isLandscape.value, (newValue) => {
+    if (newValue) {
+      window.unityInstance?.SetFullscreen(1);
+    } else {
+      window.unityInstance?.SetFullscreen(0);
+    }
+  })
+}
 </script>
 
 <template>

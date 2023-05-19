@@ -2,9 +2,7 @@
 
 <template>
   <div class="landscape-tip-container">
-    <div class="title">
-      请将屏幕旋转至横屏状态游玩
-    </div>
+    <div class="title">请将屏幕旋转至横屏状态游玩</div>
     <svg
       id="Layer_1"
       xmlns="http://www.w3.org/2000/svg"
@@ -71,19 +69,21 @@
         d="m48.73,14.6c-.31.36-.48.82-.48,1.3,0,.58.25,1.14.69,1.52l5,4.27c.84.72,2.1.62,2.82-.22,0,0,0,0,0,0l4.24-4.98c.82-.74.89-2,.15-2.82-.74-.82-2-.89-2.82-.15-.12.11-.23.23-.32.37l-1,1.19c-.73-7.17-6.79-12.62-14-12.58-1.1,0-2,.9-2,2s.9,2,2,2c5.19-.02,9.54,3.94,10,9.11l-1.43-1.23c-.83-.72-2.1-.64-2.82.2,0,0-.01.01-.02.02Z"
       />
     </svg>
+    <div class="tip">若旋转后提示依然没有消失，请确保已关闭手机旋转方向锁定</div>
   </div>
 </template>
 
 <style scoped lang="scss">
 .landscape-tip-container {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
   position: fixed;
   top: 0;
   left: 0;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
+  padding: 2rem;
   z-index: 256;
   background-color: rgba(8, 8, 8, 0.7);
   width: 100vw;
@@ -93,12 +93,12 @@
   color: #fff;
 
   .title {
-    font-size: 1.5rem;
     font-weight: bold;
+    font-size: 1.5rem;
   }
 
   svg {
-    width: 150px;
+    width: 128px;
     max-width: calc(100vw - 20px);
 
     .cls-1 {
