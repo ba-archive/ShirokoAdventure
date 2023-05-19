@@ -9,6 +9,7 @@ const canvas = document.querySelector("#unity-canvas") as HTMLCanvasElement;
 const loadingBar = document.querySelector("#unity-loading-bar") as HTMLDivElement;
 const progressBarFull = document.querySelector("#unity-progress-bar-full") as HTMLDivElement;
 const fullscreenButton = document.querySelector("#unity-fullscreen-button") as HTMLDivElement;
+const loadingPercentage = document.querySelector("#loading-percentage") as HTMLDivElement;
 
 const buildUrl = "/Build";
 const loaderUrl = buildUrl + "/ShirokoAdventrue.loader.js";
@@ -55,6 +56,7 @@ const script = document.createElement("script");
 script.src = loaderUrl;
 script.onload = () => {
   createUnityInstance(canvas, config, (progress: number) => {
+    loadingPercentage.innerText = (progress * 100).toFixed(2) + "%";
     progressBarFull.style.width = 100 * progress + "%";
   }).then((unityInstance) => {
     loadingBar.style.display = "none";
