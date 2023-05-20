@@ -61,8 +61,12 @@
 }
 
 #unity-loading-bar {
-  display: none;
+  display: flex;
   grid-area: canvas;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 #unity-footer {
@@ -93,8 +97,6 @@
   flex-direction: column;
   justify-content: stretch;
   align-items: flex-start;
-  margin-top: 10px;
-  margin-left: 6.5px;
   border: 1px solid #fff;
   border-radius: 1919px;
   background: none;
@@ -114,6 +116,17 @@
   width: 100%;
   color: #fff;
   text-align: center;
+
+  &::after {
+    display: block;
+    content: '如果等待时间过长，请尝试连接代理';
+  }
+
+  &.no-after {
+    &::after {
+      opacity: 0;
+    }
+  }
 }
 
 html,
@@ -156,8 +169,8 @@ body {
   color: #fff;
   font-size: 1.25rem;
 
-  font-family: 'Fushion Pixel', 'Microsoft YaHei', 'PingFang SC',
-    -apple-system, system-ui, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Noto Sans',
+  font-family: 'Fushion Pixel', 'Microsoft YaHei', 'PingFang SC', -apple-system,
+    system-ui, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Noto Sans',
     BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans GB', Arial, sans-serif;
   user-select: none;
 }
