@@ -23,7 +23,7 @@
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "dist/Build/ShirokoAdventrue.loader.js"
+    "public/Build/ShirokoAdventrue.loader.js"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
