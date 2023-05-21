@@ -4,6 +4,8 @@ import './styles.scss';
 import App from './App.vue';
 import isMobile from 'ismobilejs';
 
+console.log('build ' + import.meta.env?.__BUILD_TIME__);
+
 const container = document.querySelector('#unity-container') as HTMLDivElement;
 const canvas = document.querySelector('#unity-canvas') as HTMLCanvasElement;
 const loadingBar = document.querySelector(

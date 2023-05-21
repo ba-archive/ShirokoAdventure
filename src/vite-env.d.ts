@@ -15,4 +15,7 @@ declare interface Window {
     SendMessage: (objectName: string, methodName: string, value: any) => void;
     Quit: () => Promise<void>;
   };
+  mozIndexedDB?: IDBFactory;
+  webkitIndexedDB?: IDBFactory;
+  msIndexedDB?: IDBFactory;
 }
