@@ -51,7 +51,7 @@ if (isMobile(navigator).any) {
   document.getElementsByTagName('head')[0].appendChild(meta);
   container.className = 'unity-mobile';
   canvas.className = 'unity-mobile';
-  fullscreenButton.className = 'unity-mobile';
+  fullscreenButton.classList.add('unity-mobile');
 
   // To lower canvas resolution on mobile devices to gain some
   // performance, uncomment the following line:
