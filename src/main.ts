@@ -79,38 +79,55 @@ function resetUnityIndexedDB() {
 const script = document.createElement('script');
 script.src = loaderUrl;
 script.onload = () => {
-  createUnityInstance(canvas, config, (progress: number) => {
-    progressBarFull.style.width = 100 * progress + '%';
-    if (progress - 0.89 <= 0) {
-      loadingPercentage.innerText = (progress * 100).toFixed(2) + '%';
-    } else {
-      loadingPercentage.innerText = '正在解析游戏资源……';
-      loadingPercentage.classList.add('no-after');
-    }
-  })
-    .then((unityInstance: Window['unityInstance']) => {
-      loadingBar.style.display = 'none';
-      window.unityInstance = unityInstance;
-      fullscreenButton.onclick = () => {
-        unityInstance?.SetFullscreen(1);
-      };
-    })
-    .catch((message: string) => {
-      console.error(message);
-      const result = confirm(
-        `游戏在运行中遇到错误。\n点击取消以继续运行，如您多次遇到错误，请点击确定以清除游戏数据来修复问题。`
-      );
-      if (result) {
-        const confirmClear = prompt(
-          '是否清除游戏数据？已有的游戏进度将会完全丢失。\n输入“确定”二字并点击确认按钮以清除。',
-          ''
-        );
-        if (confirmClear === '确定') {
-          resetUnityIndexedDB();
-          location.reload();
-        }
+  try {
+    createUnityInstance(canvas, config, (progress: number) => {
+      progressBarFull.style.width = 100 * progress + '%';
+      if (progress - 0.89 <= 0) {
+        loadingPercentage.innerText = (progress * 100).toFixed(2) + '%';
+      } else {
+        loadingPercentage.innerText = '正在解析游戏资源……';
+        loadingPercentage.classList.add('no-after');
       }
-    });
+    })
+      .then((unityInstance: Window['unityInstance']) => {
+        loadingBar.style.display = 'none';
+        window.unityInstance = unityInstance;
+        fullscreenButton.onclick = () => {
+          unityInstance?.SetFullscreen(1);
+        };
+      })
+      .catch((message: string) => {
+        console.error(message);
+        const result = confirm(
+          `游戏在运行中遇到错误。\n点击取消以继续运行，如您多次遇到错误，请点击确定以清除游戏数据来修复问题。`
+        );
+        if (result) {
+          const confirmClear = prompt(
+            '是否清除游戏数据？已有的游戏进度将会完全丢失。\n输入“确定”二字并点击确认按钮以清除。',
+            ''
+          );
+          if (confirmClear === '确定') {
+            resetUnityIndexedDB();
+            location.reload();
+          }
+        }
+      });
+  } catch (e) {
+    console.error(message);
+    const result = confirm(
+      `游戏在运行中遇到错误。\n点击取消以继续运行，如您多次遇到错误，请点击确定以清除游戏数据来修复问题。`
+    );
+    if (result) {
+      const confirmClear = prompt(
+        '是否清除游戏数据？已有的游戏进度将会完全丢失。\n输入“确定”二字并点击确认按钮以清除。',
+        ''
+      );
+      if (confirmClear === '确定') {
+        resetUnityIndexedDB();
+        location.reload();
+      }
+    }
+  }
 };
 
 document.body.appendChild(script);
