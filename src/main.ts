@@ -6,7 +6,9 @@ import isMobile from 'ismobilejs';
 
 console.log('build ' + import.meta.env?.__BUILD_TIME__);
 
-alert('游戏尚在测试中，当前品质不代表正式上线质量，请勿外传');
+if ('production' === import.meta.env.MODE){
+  alert('游戏尚在测试中，当前品质不代表正式上线质量，请勿外传');
+}
 
 const container = document.querySelector('#unity-container') as HTMLDivElement;
 const canvas = document.querySelector('#unity-canvas') as HTMLCanvasElement;
