@@ -8,13 +8,25 @@ declare module '*.vue' {
   export default component;
 }
 
+interface UnityModule {
+  canvas: HTMLCanvasElement;
+
+  print(e: any): void;
+  SetFullscreen(setState: 0 | 1):  void;
+
+  [key: string]: any;
+}
+
+interface UnityInstance {
+  SetFullscreen: (setState: 0 | 1) => void;
+  SendMessage: (objectName: string, methodName: string, value: any) => void;
+  Quit: () => Promise<void>;
+  Module: UnityModule;  
+}
+
 declare interface Window {
   webkitConvertPointFromNodeToPage?: any;
-  unityInstance?: {
-    SetFullscreen: (setState: 0 | 1) => void;
-    SendMessage: (objectName: string, methodName: string, value: any) => void;
-    Quit: () => Promise<void>;
-  };
+  unityInstance?: UnityInstance;
   mozIndexedDB?: IDBFactory;
   webkitIndexedDB?: IDBFactory;
   msIndexedDB?: IDBFactory;

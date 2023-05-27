@@ -3,6 +3,7 @@ import './styles.scss';
 // @ts-ignore
 import App from './App.vue';
 import isMobile from 'ismobilejs';
+import { applyHook } from './unity-hook';
 
 console.log('build ' + import.meta.env?.__BUILD_TIME__);
 
@@ -90,7 +91,9 @@ script.onload = () => {
       loadingPercentage.classList.add('no-after');
     }
   })
-    .then((unityInstance: Window['unityInstance']) => {
+    .then((unityInstance: UnityInstance) => {
+      applyHook(unityInstance);
+
       loadingBar.style.display = 'none';
       window.unityInstance = unityInstance;
       fullscreenButton.onclick = () => {
