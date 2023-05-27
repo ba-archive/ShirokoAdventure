@@ -47,16 +47,17 @@
 #unity-canvas {
   grid-area: canvas;
   background: #231f20;
-  width: 1280px;
   max-width: 100vw;
   max-width: 100dvw;
-  height: 720px;
   max-height: 100vh;
   max-height: 100dvh;
+  aspect-ratio: 16 / 9;
 
   &.unity-mobile {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    width: 100dvw;
+    max-height: 100vh;
+    max-height: 100dvh;
   }
 }
 

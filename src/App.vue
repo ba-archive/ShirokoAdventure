@@ -12,17 +12,20 @@ orientation.onchange = () => {
 };
 
 const isMobileDevice = isMobile(window.navigator).any;
+const isTabletDevice = isMobile(window.navigator).tablet;
 
 if (isMobileDevice) {
   if (isLandscape.value) {
-    window.unityInstance?.SetFullscreen(1);
+    if (!isTabletDevice) {
+      window.unityInstance?.SetFullscreen(1);
+    }
   } else {
     window.unityInstance?.SetFullscreen(0);
   }
   watch(
     () => isLandscape.value,
     newValue => {
-      if (newValue) {
+      if (newValue && isMobileDevice && !isTabletDevice) {
         window.unityInstance?.SetFullscreen(1);
       } else {
         window.unityInstance?.SetFullscreen(0);
