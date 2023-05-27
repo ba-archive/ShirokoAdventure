@@ -55,6 +55,10 @@ if (isMobile(navigator).any) {
   canvas.className = 'unity-mobile';
   fullscreenButton.classList.add('unity-mobile');
 
+  if (isMobile(navigator).apple.phone) {
+    fullscreenButton.style.display = 'none';
+  }
+
   // To lower canvas resolution on mobile devices to gain some
   // performance, uncomment the following line:
   // config.devicePixelRatio = 1;
