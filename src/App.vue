@@ -36,7 +36,7 @@ if (isMobileDevice) {
 </script>
 
 <template>
-  <Teleport to="body" v-if="!isLandscape">
+  <Teleport to="body" v-if="false">
     <landscape-tip />
   </Teleport>
 </template>
