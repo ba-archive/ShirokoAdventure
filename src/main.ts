@@ -25,7 +25,7 @@ const loadingPercentage = document.querySelector(
   '#loading-percentage'
 ) as HTMLDivElement;
 
-const buildUrl = '/Build';
+const buildUrl = 'Build';
 const loaderUrl = buildUrl + '/ShirokoAdventrue.loader.js';
 const config = {
   dataUrl: buildUrl + '/ShirokoAdventrue.data.unityweb',
